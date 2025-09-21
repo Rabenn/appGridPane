@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * Clase principal que carga la interfaz de usuario desde un archivo FXML.
- * La estructura y los estilos están definidos en App.fxml y styles.css.
+ * La estructura y los estilos están definidos en app_info.fxml y estilos.css.
  */
 public class App extends Application {
 
@@ -25,24 +25,19 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        logger.info("Lanzador lanzado");
+        logger.info("App lanzada");
 
-        // Leemos con FXMLLoader y a partir de ahi construimos los objetos
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/app_info.fxml"));
         Parent root = loader.load();
 
-        // Crea la escena desde el FXML.
         Scene scene = new Scene(root);
 
         logger.info("entra al css");
         scene.getStylesheets().add(getClass().getResource("css/estilos.css").toExternalForm());
         logger.info("funciona css");
 
-        // Fija tamaño mínimo de la ventana
         stage.setMinWidth(600);
         stage.setMinHeight(400);
-
-        // Muestra la ventana (Stage).
         stage.setTitle("Aplicación sencilla con GridPane");
         stage.setScene(scene);
         stage.show();

@@ -1,17 +1,15 @@
-/* Fondo general opcional */
+/* Estilos de los fondos y labels */
 .root {
     -fx-background-color: #f4f6f9;
     -fx-font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Labels generales */
 .label {
     -fx-font-size: 14px;
     -fx-text-fill: #333333;
     -fx-font-weight: bold;
 }
 
-/* Label de estado (ej: "Status: Ready") */
 .label:bottom {
     -fx-font-size: 12px;
     -fx-text-fill: #666666;
