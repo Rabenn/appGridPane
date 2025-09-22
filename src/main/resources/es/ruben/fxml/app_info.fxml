@@ -2,46 +2,49 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<GridPane prefWidth="600" prefHeight="400" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
+<GridPane prefWidth="600" prefHeight="400" xmlns="http://javafx.com/javafx/24.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="es.ruben.GridController">
 
     <columnConstraints>
-
         <ColumnConstraints hgrow="ALWAYS" percentWidth="80" minWidth="400"/>
-
         <ColumnConstraints hgrow="SOMETIMES" percentWidth="20" minWidth="150"/>
     </columnConstraints>
 
-
     <rowConstraints>
-
         <RowConstraints vgrow="NEVER" minHeight="40"/>
-
         <RowConstraints vgrow="NEVER" minHeight="40"/>
-
         <RowConstraints vgrow="ALWAYS" minHeight="200"/>
-
         <RowConstraints vgrow="NEVER" minHeight="30"/>
     </rowConstraints>
 
     <children>
 
+
         <HBox spacing="10" GridPane.rowIndex="0">
             <children>
-                <Label text="Name:"/>
-                <TextField HBox.hgrow="ALWAYS"/>
+                <Label text="Name:" fx:id="labelNombre"/>
+                <TextField fx:id="textfieldNombre" HBox.hgrow="ALWAYS"/>
             </children>
         </HBox>
 
 
-        <Label text="Description:" GridPane.rowIndex="1"/>
-        <TextArea GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+        <Label text="Description:" fx:id="labelDescription" GridPane.rowIndex="1"/>
 
-        <Button text="Ok" maxWidth="Infinity" maxHeight="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-        <Button text="Cancel" maxWidth="Infinity" maxHeight="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextArea fx:id="textareaDescripcion" GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+
+
+        <Button fx:id="botonOK" text="Ok" maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.columnIndex="1" GridPane.rowIndex="0"
+                onAction="#onOkClicked"/>
+
+
+        <Button fx:id="botonCancel" text="Cancel" maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.columnIndex="1" GridPane.rowIndex="1"
+                onAction="#onCancelClicked"/>
 
 
         <HBox alignment="CENTER_LEFT" GridPane.rowIndex="3" GridPane.columnSpan="2">
@@ -49,7 +52,7 @@
                 <Insets top="5" right="5" bottom="5" left="5"/>
             </padding>
             <children>
-                <Label text="Status: Ready"/>
+                <Label text="Status: Ready" fx:id="labelStatus"/>
             </children>
         </HBox>
     </children>

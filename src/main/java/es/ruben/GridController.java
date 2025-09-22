@@ -1,7 +1,6 @@
 package es.ruben;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -30,4 +29,22 @@ public class GridController {
     @FXML
     private TextField textfieldNombre;
 
+    @FXML
+    private void onOkClicked() {
+        String texto = textfieldNombre.getText().trim();
+        if (!texto.isEmpty()) {
+            if (!textareaDescripcion.getText().isEmpty()) {
+                textareaDescripcion.appendText("\n" + texto);
+            } else {
+                textareaDescripcion.setText(texto);
+            }
+            textfieldNombre.clear();
+        }
+    }
+
+    @FXML
+    private void onCancelClicked() {
+        textfieldNombre.clear();
+        textareaDescripcion.clear();
+    }
 }
