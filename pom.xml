@@ -3,14 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>es.ruben</groupId>
-    <artifactId>ejercicio102ruben</artifactId>
+    <artifactId>appGridPane</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!-- Modificacion del tipo de enpaquetado -->
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>es.ruben.Lanzador</mainClass>
+        <mainClass>es.ruben.App</mainClass>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
@@ -123,7 +123,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>es.ruben.Lanzador</mainClass>
+                            <mainClass>es.ruben.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
